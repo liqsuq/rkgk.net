@@ -1,4 +1,11 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+languageCode = "ja-jp"
 theme = "hyde"
+title = "rkgknet"
+[params]
+description = "ネット出張落書き帳"
+disqusShortname = ""
+googleAnalytics = ""
+layoutReverse = true
+themecolor = ""
+
