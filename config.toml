@@ -6,7 +6,7 @@ publishDir = "docs"
 disqusShortname = ""
 googleAnalytics = ""
 hasCJKLanguage = true
-summaryLength = 120
+summaryLength = 160
 [Params]
   copyright = "liqsuq"
   readmore = true
