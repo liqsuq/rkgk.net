@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "Test"
+date: 2022-03-24T17:47:34+09:00
 categories:
   - "未分類"
 tags:
@@ -8,3 +8,5 @@ tags:
 draft: false
 ---
 
+
+testest
