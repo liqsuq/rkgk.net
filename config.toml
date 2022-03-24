@@ -1,7 +1,8 @@
 baseURL = "http://example.org/"
-languageCode = "ja-jp"
+languageCode = "ja-JP"
 title = "rkgknet"
 theme = "mainroad"
+publishDir = "docs"
 disqusShortname = ""
 googleAnalytics = ""
 hasCJKLanguage = true
@@ -20,7 +21,9 @@ summaryLength = 120
   home = "right"
   list = "right"
   single = false
-  widgets = ["search", "recent", "categories", "taglist"]
+  widgets = ["search", "recent", "categories", "taglist", "social"]
+[Params.widgets]
+  tags_counter = true
 [[Menus.main]]
   Name = "Home"
   URL = "/"
