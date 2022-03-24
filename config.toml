@@ -1,10 +1,29 @@
 baseURL = "http://example.org/"
 languageCode = "ja-jp"
-theme = "hyde"
 title = "rkgknet"
-[params]
-description = "ネット出張落書き帳"
+theme = "mainroad"
 disqusShortname = ""
 googleAnalytics = ""
-layoutReverse = true
-themecolor = ""
+hasCJKLanguage = true
+summaryLength = 120
+[Params]
+  copyright = "liqsuq"
+  readmore = true
+  googleFontsLink = "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+[Params.style.vars]
+  highlightColor = "#999999"
+  fontFamilyPrimary = "'Open Sans', 'Noto Sans JP', Helvetica, Arial, sans-serif"
+[Params.logo]
+  title = "rkgknet"
+  subtitle = "ネット出張落書き帳"
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = false
+  widgets = ["search", "recent", "categories", "taglist"]
+[[Menus.main]]
+  Name = "Home"
+  URL = "/"
+[[Menus.main]]
+  Name = "Posts"
+  URL = "/posts/"
