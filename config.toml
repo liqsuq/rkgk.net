@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "http://rkgknet.org/"
 languageCode = "ja-JP"
 title = "rkgknet"
 theme = "mainroad"
@@ -12,6 +12,7 @@ summaryLength = 160
   readmore = true
   post_meta = ["date", "categories"]
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+  customCSS = ["css/custom.css"]
 [Params.style.vars]
   highlightColor = "#999999"
   fontFamilyPrimary = "'Open Sans', 'Noto Sans JP', Helvetica, Arial, sans-serif"
@@ -21,10 +22,11 @@ summaryLength = 160
 [Params.sidebar]
   home = "right"
   list = "right"
-  single = false
+  single = "right"
   widgets = ["search", "recent", "categories", "taglist", "social"]
 [Params.widgets]
   tags_counter = true
 [[Menus.main]]
-  Name = "Home"
-  URL = "/"
+  name = "Home"
+  url = "/"
+  weight = 1
