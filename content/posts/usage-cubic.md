@@ -7,7 +7,7 @@ tags:
   - "Linux"
   - "Ubuntu"
   - "Tools"
-draft: false
+draft: true
 ---
 
 CubicはUbuntuのインストールISOを改変して独自のインストールISOを作成出来るGUIユーティリティです。
