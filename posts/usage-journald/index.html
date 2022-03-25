@@ -1,281 +1,30 @@
-<!doctype html><html class=no-js lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<title>journald/journalctlの使い方 - rkgknet</title>
-<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
-<meta name=description content>
-<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-<link rel=dns-prefetch href=//fonts.googleapis.com>
-<link rel=dns-prefetch href=//fonts.gstatic.com>
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap">
-<link rel=stylesheet href=/css/style.css>
-<link rel=stylesheet href=/css/custom.css>
-<link rel="shortcut icon" href=/favicon.ico>
-</head>
-<body class=body>
-<div class="container container--outer">
-<header class=header>
-<div class="container header__container">
-<div class=logo>
-<a class=logo__link href=/ title=rkgknet rel=home>
-<div class="logo__item logo__text">
-<div class=logo__title>rkgknet</div>
-<div class=logo__tagline>ネット出張落書き帳</div>
-</div>
-</a>
-</div>
-<nav class=menu>
-<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
-<span class=menu__btn-title tabindex=-1>Menu</span>
-</button>
-<ul class=menu__list>
-<li class=menu__item>
-<a class=menu__link href=/>
-<span class=menu__text>Home</span>
-</a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div class="wrapper flex">
-<div class=primary>
-<main class=main role=main>
-<article class=post>
-<header class=post__header>
-<h1 class=post__title>journald/journalctlの使い方</h1>
-<div class="post__meta meta">
-<div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-02-11T23:08:38+09:00>February 11, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/linux/ rel=category>Linux</a>
-</span>
-</div></div>
-</header>
-<div class="content post__content clearfix">
-<p>journalctlが便利。
+<!doctype html><html class=no-js lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><title>journald/journalctlの使い方 - rkgknet</title><script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/custom.css><link rel="shortcut icon" href=/favicon.ico></head><body class=body><div class="container container--outer"><header class=header><div class="container header__container"><div class=logo><a class=logo__link href=/ title=rkgknet rel=home><div class="logo__item logo__text"><div class=logo__title>rkgknet</div><div class=logo__tagline>ネット出張落書き帳</div></div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=/><span class=menu__text>Home</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><h1 class=post__title>journald/journalctlの使い方</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-02-11T23:08:38+09:00>February 11, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/linux/ rel=category>Linux</a></span></div></div></header><div class="content post__content clearfix"><p>journalctlが便利。
 具体的には<code>journalctl -b -o short-monotonic -p err</code>で今回のブートで注視すべきログが抽出される。
-/var/log/messagesを目を皿にして眺めたり出力制限戻し忘れたりがなくなるえらい子だよ…。</p>
-<h1 id=journald>journald</h1>
-<p><a href=https://www.school.ctc-g.co.jp/columns/nakai/nakai56.html>このサイト</a>の図が非常に分かりやすかった。</p>
-<p><img src=https://www.school.ctc-g.co.jp/columns/nakai/img/column56_fig01.png alt=jounaldがログを収集する仕組み></p>
-<p>つまり、journaldは従来のrsyslogdの前段で包括したログを受け取りバイナリで保存しています。
-加えてrsyslogdに流すべきメッセージは転送して従来の動作を維持しています。</p>
-<p>journaldはデフォルトでは/run/log/journal/以下にログを保管していますが、
+/var/log/messagesを目を皿にして眺めたり出力制限戻し忘れたりがなくなるえらい子だよ…。</p><h1 id=journald>journald</h1><p><a href=https://www.school.ctc-g.co.jp/columns/nakai/nakai56.html>このサイト</a>の図が非常に分かりやすかった。</p><p><img src=https://www.school.ctc-g.co.jp/columns/nakai/img/column56_fig01.png alt=jounaldがログを収集する仕組み></p><p>つまり、journaldは従来のrsyslogdの前段で包括したログを受け取りバイナリで保存しています。
+加えてrsyslogdに流すべきメッセージは転送して従来の動作を維持しています。</p><p>journaldはデフォルトでは/run/log/journal/以下にログを保管していますが、
 /runはtmpfsなために揮発し、確認できるログは前回ブートした時までとなります。
 journalctlを使ってログ解析をしようと思ったら以下のコマンドで
-/var/log/journald/を作成してログの保存場所を変更しましょう。(詳細はjournald.confのStorageを参照)</p>
-<pre tabindex=0><code>$ sudo mkdir -p /var/log/jounal
+/var/log/journald/を作成してログの保存場所を変更しましょう。(詳細はjournald.confのStorageを参照)</p><pre tabindex=0><code>$ sudo mkdir -p /var/log/jounal
 $ sudo systemctl restart systemd-journald
-</code></pre><h1 id=journaldの設定>journaldの設定</h1>
-<p>journaldの設定は/etc/systemd/journald.confによって行われています。デフォルトではファイル自体はあるが
+</code></pre><h1 id=journaldの設定>journaldの設定</h1><p>journaldの設定は/etc/systemd/journald.confによって行われています。デフォルトではファイル自体はあるが
 全てコメントアウトされた状態になっているかと思います。
 詳細な説明は<a href=https://www.freedesktop.org/software/systemd/man/journald.conf.html>journald.conf(5)</a>を
-見てもらうとして、特に重要な3点のみ書いておきます。</p>
-<dl>
-<dt>Storage</dt>
-<dd>バイナリデータを保存しておく場所を決めます。デフォルトは<code>auto</code>で以下の値が選択できます。</dd>
-</dl>
-<table>
-<thead>
-<tr>
-<th>設定</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>persistent</td>
-<td>書き込み不可で無い限り/var/log/journal/が作成され、データが保管されます。</td>
-</tr>
-<tr>
-<td>volatile</td>
-<td>/run/log/journal/にデータを置き、データの揮発を強制します。</td>
-</tr>
-<tr>
-<td>auto</td>
-<td>/var/log/journal/があればこちらに置き、無ければ/run/log/journal/に置きます。</td>
-</tr>
-<tr>
-<td>none</td>
-<td>どちらにもデータを置きません。ただしrsyslogd等への転送は機能します。</td>
-</tr>
-</tbody>
-</table>
-<dl>
-<dt>SystemMaxUse</dt>
-<dd>保存されるデータのサイズを制限するために使われます。デフォルトではファイルシステムの大きさの10%と
-なる様に設定されています。</dd>
-<dt>SystemKeepFree</dt>
-<dd>SystemMaxUseとは逆に、使用中のファイルシステムの空き容量をどれだけ残しておくか決めます。
-デフォルトでは15%で、より使用できる容量が少ない方が適用されます。</dd>
-</dl>
-<h1 id=jounalctlの使い方>jounalctlの使い方</h1>
-<p>journalctlは引数を取らず、多彩なオプションで挙動を変えます。
+見てもらうとして、特に重要な3点のみ書いておきます。</p><dl><dt>Storage</dt><dd>バイナリデータを保存しておく場所を決めます。デフォルトは<code>auto</code>で以下の値が選択できます。</dd></dl><table><thead><tr><th>設定</th><th>説明</th></tr></thead><tbody><tr><td>persistent</td><td>書き込み不可で無い限り/var/log/journal/が作成され、データが保管されます。</td></tr><tr><td>volatile</td><td>/run/log/journal/にデータを置き、データの揮発を強制します。</td></tr><tr><td>auto</td><td>/var/log/journal/があればこちらに置き、無ければ/run/log/journal/に置きます。</td></tr><tr><td>none</td><td>どちらにもデータを置きません。ただしrsyslogd等への転送は機能します。</td></tr></tbody></table><dl><dt>SystemMaxUse</dt><dd>保存されるデータのサイズを制限するために使われます。デフォルトではファイルシステムの大きさの10%と
+なる様に設定されています。</dd><dt>SystemKeepFree</dt><dd>SystemMaxUseとは逆に、使用中のファイルシステムの空き容量をどれだけ残しておくか決めます。
+デフォルトでは15%で、より使用できる容量が少ない方が適用されます。</dd></dl><h1 id=jounalctlの使い方>jounalctlの使い方</h1><p>journalctlは引数を取らず、多彩なオプションで挙動を変えます。
 やっぱり詳細な説明は<a href=https://www.freedesktop.org/software/systemd/man/journalctl.html#>journalctl(1)</a>に
 任せますが、是非とも覚えて帰ってもらいたいオプションを抜粋します。
 オプションの組み合わせで(journaldに対応しているモジュールのログなら)大抵のログ出力コマンドを代替できます
-。</p>
-<dl>
-<dt>-b ブートID</dt>
-<dd>ブート毎にログを表示します。ブートIDを省略すると前回のブートから(即ち現在)表示し、
--1から減分でブートをさかのぼれます。また、&ndash;list-bootsオプションでブートの履歴を確認できます。</dd>
-<dt>-o 出力フォーマット</dt>
-<dd>ログの出力フォーマットを指定します。多いので使ってるフォーマットだけ以下に示します。</dd>
-</dl>
-<table>
-<thead>
-<tr>
-<th>設定</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>short</td>
-<td>デフォルトでsyslogとほぼ同じフォーマットです</td>
-</tr>
-<tr>
-<td>short-monotonic</td>
-<td>shortと似ていますがブートからのタイムスタンプを使用します</td>
-</tr>
-<tr>
-<td>cat</td>
-<td>各エントリの実際の出力のみを表示します</td>
-</tr>
-</tbody>
-</table>
-<dl>
-<dt>-p ログレベル</dt>
-<dd>ログレベル(優先度)でフィルタします。単一のログレベルの場合はその値より低い(重要な)ログを出力し、
+。</p><dl><dt>-b ブートID</dt><dd>ブート毎にログを表示します。ブートIDを省略すると前回のブートから(即ち現在)表示し、
+-1から減分でブートをさかのぼれます。また、&ndash;list-bootsオプションでブートの履歴を確認できます。</dd><dt>-o 出力フォーマット</dt><dd>ログの出力フォーマットを指定します。多いので使ってるフォーマットだけ以下に示します。</dd></dl><table><thead><tr><th>設定</th><th>説明</th></tr></thead><tbody><tr><td>short</td><td>デフォルトでsyslogとほぼ同じフォーマットです</td></tr><tr><td>short-monotonic</td><td>shortと似ていますがブートからのタイムスタンプを使用します</td></tr><tr><td>cat</td><td>各エントリの実際の出力のみを表示します</td></tr></tbody></table><dl><dt>-p ログレベル</dt><dd>ログレベル(優先度)でフィルタします。単一のログレベルの場合はその値より低い(重要な)ログを出力し、
 ログレベル..ログレベルの様にして範囲指定することもできます。
-ログレベルは以下の数値/テキストレベルどちらも使用可能です。</dd>
-</dl>
-<table>
-<thead>
-<tr>
-<th>数値</th>
-<th>テキストレベル</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>emerg</td>
-</tr>
-<tr>
-<td>1</td>
-<td>alert</td>
-</tr>
-<tr>
-<td>2</td>
-<td>crit</td>
-</tr>
-<tr>
-<td>3</td>
-<td>err</td>
-</tr>
-<tr>
-<td>4</td>
-<td>warning</td>
-</tr>
-<tr>
-<td>5</td>
-<td>notice</td>
-</tr>
-<tr>
-<td>6</td>
-<td>info</td>
-</tr>
-<tr>
-<td>7</td>
-<td>debug</td>
-</tr>
-</tbody>
-</table>
-<dl>
-<dt>-u ユニット名</dt>
-<dd>ユニット名でフィルタします。部分一致も含みます。</dd>
-<dt>-t syslog識別子</dt>
-<dd>syslog識別子(ログに表示されてるモジュール名)でフィルタします。こちらは完全一致みたいです。</dd>
-<dt>-e</dt>
-<dd>最近のログを表示します。(多分1000件ログ出力してlessとかのページャで末尾表示するとかそんな動作)</dd>
-<dt>-x</dt>
-<dd>詳細なメッセージを表示します。</dd>
-<dt>-f</dt>
-<dd>最新のログを表示し、ログの更新を追いかけます。(tail -fの様な挙動)</dd>
-<dt>-k</dt>
-<dd>カーネルメッセージを表示します。(dmesgと同等)</dd>
-</dl>
-</div>
-<footer class=post__footer>
-<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
-<ul class=tags__list>
-<li class=tags__item>
-<a class="tags__link btn" href=/tags/linux/ rel=tag>Linux</a>
-</li>
-<li class=tags__item>
-<a class="tags__link btn" href=/tags/tools/ rel=tag>Tools</a>
-</li>
-</ul>
-</div>
-</footer>
-</article>
-</main>
-</div>
-<aside class=sidebar><div class="widget-search widget">
-<form class=widget-search__form role=search method=get action=https://google.com/search>
-<label>
-<input class=widget-search__field type=search placeholder=SEARCH… name=q aria-label=SEARCH…>
-</label>
+ログレベルは以下の数値/テキストレベルどちらも使用可能です。</dd></dl><table><thead><tr><th>数値</th><th>テキストレベル</th></tr></thead><tbody><tr><td>0</td><td>emerg</td></tr><tr><td>1</td><td>alert</td></tr><tr><td>2</td><td>crit</td></tr><tr><td>3</td><td>err</td></tr><tr><td>4</td><td>warning</td></tr><tr><td>5</td><td>notice</td></tr><tr><td>6</td><td>info</td></tr><tr><td>7</td><td>debug</td></tr></tbody></table><dl><dt>-u ユニット名</dt><dd>ユニット名でフィルタします。部分一致も含みます。</dd><dt>-t syslog識別子</dt><dd>syslog識別子(ログに表示されてるモジュール名)でフィルタします。こちらは完全一致みたいです。</dd><dt>-e</dt><dd>最近のログを表示します。(多分1000件ログ出力してlessとかのページャで末尾表示するとかそんな動作)</dd><dt>-x</dt><dd>詳細なメッセージを表示します。</dd><dt>-f</dt><dd>最新のログを表示し、ログの更新を追いかけます。(tail -fの様な挙動)</dd><dt>-k</dt><dd>カーネルメッセージを表示します。(dmesgと同等)</dd></dl></div><footer class=post__footer><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=/tags/linux/ rel=tag>Linux</a></li><li class=tags__item><a class="tags__link btn" href=/tags/tools/ rel=tag>Tools</a></li></ul></div></footer></article></main></div><aside class=sidebar><div class="widget-search widget"><form class=widget-search__form role=search method=get action=https://google.com/search><label><input class=widget-search__field type=search placeholder=SEARCH… name=q aria-label=SEARCH…></label>
 <input class=widget-search__submit type=submit value=Search>
-<input type=hidden name=sitesearch value=http://blog.rkgknet.org/>
-</form>
-</div>
-<div class="widget-recent widget">
-<h4 class=widget__title>Recent Posts</h4>
-<div class=widget__content>
-<ul class=widget__list>
-<li class=widget__item><a class=widget__link href=/posts/sh-centos-ubuntu/>CentOSで動いてたシェルスクリプトがUbuntuで動かない</a></li>
-<li class=widget__item><a class=widget__link href=/posts/webapp/>Ubuntu18.04でチャチャッと全画面Webアプリ</a></li>
-<li class=widget__item><a class=widget__link href=/posts/usage-journald/>journald/journalctlの使い方</a></li>
-<li class=widget__item><a class=widget__link href=/posts/markdown/>Hugoで使えるマークダウン記法の確認</a></li>
-</ul>
-</div>
-</div>
-<div class="widget-categories widget">
-<h4 class=widget__title>Categories</h4>
-<div class=widget__content>
-<ul class=widget__list>
-<li class=widget__item>
-<a class=widget__link href=/categories/linux/>Linux</a></li>
-<li class=widget__item>
-<a class=widget__link href=/categories/%E3%83%A1%E3%83%A2/>メモ</a></li>
-</ul>
-</div>
-</div>
-<div class="widget-taglist widget">
-<h4 class=widget__title>Tags</h4>
-<div class=widget__content>
-<a class="widget-taglist__link widget__link btn" href=/tags/centos/ title=CentOS>CentOS (1)</a>
+<input type=hidden name=sitesearch value=http://blog.rkgknet.org/></form></div><div class="widget-recent widget"><h4 class=widget__title>Recent Posts</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/posts/sh-centos-ubuntu/>CentOSで動いてたシェルスクリプトがUbuntuで動かない</a></li><li class=widget__item><a class=widget__link href=/posts/webapp/>Ubuntu18.04でチャチャッと全画面Webアプリ</a></li><li class=widget__item><a class=widget__link href=/posts/usage-journald/>journald/journalctlの使い方</a></li><li class=widget__item><a class=widget__link href=/posts/markdown/>Hugoで使えるマークダウン記法の確認</a></li></ul></div></div><div class="widget-categories widget"><h4 class=widget__title>Categories</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=/categories/linux/>Linux</a></li><li class=widget__item><a class=widget__link href=/categories/%E3%83%A1%E3%83%A2/>メモ</a></li></ul></div></div><div class="widget-taglist widget"><h4 class=widget__title>Tags</h4><div class=widget__content><a class="widget-taglist__link widget__link btn" href=/tags/centos/ title=CentOS>CentOS (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/hugo/ title=Hugo>Hugo (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/linux/ title=Linux>Linux (3)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/markdown/ title=Markdown>Markdown (1)</a>
 <a class="widget-taglist__link widget__link btn" href=/tags/tools/ title=Tools>Tools (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/ubuntu/ title=Ubuntu>Ubuntu (2)</a>
-</div>
-</div>
-</aside>
-</div>
-<footer class=footer>
-<div class="container footer__container flex">
-<div class=footer__copyright>
-&copy; 2022 liqsuq.
-<span class=footer__copyright-credits>Generated with <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> and <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a> theme.</span>
-</div>
-</div>
-</footer>
-</div>
-<script async defer src=/js/menu.js></script>
-</body>
-</html>
+<a class="widget-taglist__link widget__link btn" href=/tags/ubuntu/ title=Ubuntu>Ubuntu (2)</a></div></div></aside></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2022 liqsuq.
+<span class=footer__copyright-credits>Generated with <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> and <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a> theme.</span></div></div></footer></div><script async defer src=/js/menu.js></script></body></html>
