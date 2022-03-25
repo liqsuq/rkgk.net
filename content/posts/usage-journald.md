@@ -1,6 +1,6 @@
 ---
 title: "journald/journalctlの使い方"
-date: 2022-03-24T23:08:38+09:00
+date: 2020-02-11T23:08:38+09:00
 categories:
   - "Linux"
 tags:
