@@ -1,0 +1,164 @@
+<!doctype html><html class=no-js lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Linux - rkgknet</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel=alternate type=application/rss+xml href=/tags/linux/index.xml title=rkgknet>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<div class="container header__container">
+<div class=logo>
+<a class=logo__link href=/ title=rkgknet rel=home>
+<div class="logo__item logo__text">
+<div class=logo__title>rkgknet</div>
+<div class=logo__tagline>ネット出張落書き帳</div>
+</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/>
+<span class=menu__text>Home</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class="main list" role=main>
+<header class=main__header>
+<h1 class=main__title>Linux</h1>
+</header><article class="list__item post">
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/posts/sh-centos-ubuntu/ rel=bookmark>
+CentOSで動いてたシェルスクリプトがUbuntuで動かない
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-04-15T09:34:24+09:00>April 15, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/linux/ rel=category>Linux</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+誰かが作ったCentOS用のシェルスクリプトを「まあsh準拠なら動くやろ」と思って気軽に動かした時に気づいたけど、CentOSはシバンを#!/bin/shにしてても実際にはbashが動いてる。試しにls -lしてみればshはbashにシンボリックリンクされていることが分かる。 一方でUbuntuは6.10以降shをdash
+</div>
+<div class="list__footer clearfix">
+<a class="list__footer-readmore btn" href=/posts/sh-centos-ubuntu/>Read more…</a>
+</div>
+</article><article class="list__item post">
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/posts/webapp/ rel=bookmark>
+Ubuntu18.04でチャチャッと全画面Webアプリ
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-02-18T09:24:39+09:00>February 18, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/linux/ rel=category>Linux</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+ログイン時に特定のURLを全画面で表示するためのTipsです。 Webフレームワークで実装したアプリケーションの操作画面を常に表示させた端末を作りたいといった用途の簡単な実装に使えると思います。 どこかで使えそうなのでメモ。 systemd使った方が正統かも… 必要に応じて設定画面から自動ログインの設定や自動サスペンドをOFF
+</div>
+<div class="list__footer clearfix">
+<a class="list__footer-readmore btn" href=/posts/webapp/>Read more…</a>
+</div>
+</article><article class="list__item post">
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/posts/usage-journald/ rel=bookmark>
+journald/journalctlの使い方
+</a>
+</h2>
+<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2020-02-11T23:08:38+09:00>February 11, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/linux/ rel=category>Linux</a>
+</span>
+</div></div>
+</header>
+<div class="content list__excerpt post__content clearfix">
+journalctlが便利。 具体的にはjournalctl -b -o short-monotonic -p errで今回のブートで注視すべきログが抽出される。 /var/log/messagesを目を皿にして眺めたり出力制限戻し忘れたりがなくなるえらい子だよ…。 journald このサイトの図が非常に分かりやすかった。 つまり、journaldは従来のrsyslogdの前段で包括
+</div>
+<div class="list__footer clearfix">
+<a class="list__footer-readmore btn" href=/posts/usage-journald/>Read more…</a>
+</div>
+</article>
+</main>
+</div>
+<aside class=sidebar><div class="widget-search widget">
+<form class=widget-search__form role=search method=get action=https://google.com/search>
+<label>
+<input class=widget-search__field type=search placeholder=SEARCH… name=q aria-label=SEARCH…>
+</label>
+<input class=widget-search__submit type=submit value=Search>
+<input type=hidden name=sitesearch value=http://blog.rkgknet.org/>
+</form>
+</div>
+<div class="widget-recent widget">
+<h4 class=widget__title>Recent Posts</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item><a class=widget__link href=/posts/sh-centos-ubuntu/>CentOSで動いてたシェルスクリプトがUbuntuで動かない</a></li>
+<li class=widget__item><a class=widget__link href=/posts/webapp/>Ubuntu18.04でチャチャッと全画面Webアプリ</a></li>
+<li class=widget__item><a class=widget__link href=/posts/usage-journald/>journald/journalctlの使い方</a></li>
+<li class=widget__item><a class=widget__link href=/posts/markdown/>Hugoで使えるマークダウン記法の確認</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-categories widget">
+<h4 class=widget__title>Categories</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item>
+<a class=widget__link href=/categories/linux/>Linux</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/%E3%83%A1%E3%83%A2/>メモ</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-taglist widget">
+<h4 class=widget__title>Tags</h4>
+<div class=widget__content>
+<a class="widget-taglist__link widget__link btn" href=/tags/centos/ title=CentOS>CentOS (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/hugo/ title=Hugo>Hugo (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/linux/ title=Linux>Linux (3)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/markdown/ title=Markdown>Markdown (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/tools/ title=Tools>Tools (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/ubuntu/ title=Ubuntu>Ubuntu (2)</a>
+</div>
+</div>
+</aside>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 liqsuq.
+<span class=footer__copyright-credits>Generated with <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> and <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a> theme.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+</body>
+</html>
