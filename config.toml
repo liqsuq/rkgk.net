@@ -6,6 +6,8 @@ disqusShortname = ""
 googleAnalytics = ""
 hasCJKLanguage = true
 summaryLength = 160
+[markup.goldmark.renderer]
+  unsafe = true
 [Params]
   copyright = "liqsuq"
   readmore = true
