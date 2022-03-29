@@ -24,7 +24,7 @@ summaryLength = 160
   home = "right"
   list = "right"
   single = "right"
-  widgets = ["search", "recent", "categories", "taglist", "social"]
+  widgets = ["recent", "categories", "taglist", "social"]
 [Params.widgets]
   tags_counter = true
 [[Menus.main]]
