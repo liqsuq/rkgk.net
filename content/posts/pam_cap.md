@@ -65,8 +65,10 @@ AmbientCapabilities=CAP_IPC_LOCK CAP_SYS_RAWIO CAP_SYS_ADMIN CAP_SYS_NICE CAP_SY
 お手上げ。バイナリにsetcapでケーパビリティ付与するかsetuidでrootユーザで実行するしかないかなあ。
 
 # 参考
-[SystemdのCapabilityBoundingSet/AmbientCapabilitiesの挙動](https://gloryof.hatenablog.com/entry/2018/10/27/104711)  
-[Linux Capability - ケーパビリティについての整理](https://udzura.hatenablog.jp/entry/2016/06/24/181852)  
-[明日使えない Linux の capabilities の話](https://nojima.hatenablog.com/entry/2016/12/03/000000)  
-[Linux Kernel Capability(Linuxカーネルケーパビリティ)に関して(2020年版) - Part1](https://security.sios.com/security/os-db/capability-info-20200701.html)  
+[4.11. Providing secure user access - Debian セキュリティマニュアル](https://www.debian.org/doc/manuals/securing-debian-manual/ch04s11.ja.html)  
+[PAM (Pluggable Authentication Modules) - Carpe Diem](https://christina04.hatenablog.com/entry/pluggable-authentication-module)  
+[SystemdのCapabilityBoundingSet/AmbientCapabilitiesの挙動 - シュンツのつまづき日記](https://gloryof.hatenablog.com/entry/2018/10/27/104711)  
+[Linux Capability - ケーパビリティについての整理 - ローファイ日記](https://udzura.hatenablog.jp/entry/2016/06/24/181852)  
+[明日使えない Linux の capabilities の話 - @nojima's blog](https://nojima.hatenablog.com/entry/2016/12/03/000000)  
+[Linux Kernel Capability(Linuxカーネルケーパビリティ)に関して(2020年版) - Part1 - security.sios.com](https://security.sios.com/security/os-db/capability-info-20200701.html)  
 [PAM - ArchWiki](https://wiki.archlinux.jp/index.php/PAM)
