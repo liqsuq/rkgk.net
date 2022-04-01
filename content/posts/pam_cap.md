@@ -56,10 +56,17 @@ $ echo -e "[Service]\nAmbientCapabilities=CAP_IPC_LOCK CAP_SYS_RAWIO CAP_SYS_ADM
 AmbientCapabilities=CAP_IPC_LOCK CAP_SYS_RAWIO CAP_SYS_ADMIN CAP_SYS_NICE CAP_SYS_RESOURCE
 ```
 
-…とやってみたがこうすると目当てのユーザでは上手くいくんだけどケーパビリティを設定していないユーザではgnome-terminalが起動できなくなってしまう。
+…とやってみたがこうすると目当てのユーザでは上手くいくんだけどケーパビリティを設定していないユーザではgnome-terminalが起動できなくなってしまう。目当てのユーザーでsystemd --user実行した時には親のケーパビリティを引き継げるがその他のユーザーでは割り当てがないので、権限を拡張する動作になりEPERMするのかと思う。
 
 ``` 
 ... systemd[14039]: gnome-terminal-server.service: Failed to apply ambient capabilities (before UID change): Operation not permitted
 ```
 
 お手上げ。バイナリにsetcapでケーパビリティ付与するかsetuidでrootユーザで実行するしかないかなあ。
+
+# 参考
+[SystemdのCapabilityBoundingSet/AmbientCapabilitiesの挙動](https://gloryof.hatenablog.com/entry/2018/10/27/104711)  
+[Linux Capability - ケーパビリティについての整理](https://udzura.hatenablog.jp/entry/2016/06/24/181852)  
+[明日使えない Linux の capabilities の話](https://nojima.hatenablog.com/entry/2016/12/03/000000)  
+[Linux Kernel Capability(Linuxカーネルケーパビリティ)に関して(2020年版) - Part1](https://security.sios.com/security/os-db/capability-info-20200701.html)  
+[PAM - ArchWiki](https://wiki.archlinux.jp/index.php/PAM)
