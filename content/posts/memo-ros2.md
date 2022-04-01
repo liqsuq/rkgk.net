@@ -25,6 +25,12 @@ $ sudo rosdep init
 $ rosdep update
 ```
 
+更にシミュレータ周りで追加のパッケージが必要になるが、これはROS2のバージョン依存。
+
+```
+$ sudo apt install ros-galactic-ros-ign-bridge ros-galactic-webots-ros2-driver
+```
+
 # rosdepが失敗する
 Cubicを使う等してOS名を変更していた場合、既存のOS名に該当しないため`rosdep update`が失敗することがある。
 
