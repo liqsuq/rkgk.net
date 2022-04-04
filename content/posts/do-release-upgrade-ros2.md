@@ -7,7 +7,7 @@ tags:
   - "Linux"
   - "Ubuntu"
   - ""
-draft: true
+draft: false
 ---
 
 ROS2はUbuntuのリリースに厳密に紐ついている上にパッケージ名でROS2のバージョンを区分けしているから、ROS2が入ったままUbuntuを18.04から20.04にアップグレードしようとすると失敗する。
