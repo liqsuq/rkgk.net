@@ -49,6 +49,7 @@ https://www.ros.org/reps/rep-2000.html
 
 ``` bash
 $ sudo apt remove ros-eloquent-*
+$ sudo apt autoremove
 ```
 
-ros-eloquent-接頭辞がついてないROS2パッケージがあるはずだし、ROS2しか依存していなかったパッケージとかもあるはずなのでクリーンなアンインストールとはいかないはずだけどそういうのは公式にissue投げる案件かな。
+autoremoveでROS2インストール時の色々な依存ファイルは削除されるはず。
