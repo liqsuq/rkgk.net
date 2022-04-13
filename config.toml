@@ -3,7 +3,7 @@ languageCode = "ja-JP"
 title = "rkgknet"
 theme = "mainroad"
 disqusShortname = "rkgknet"
-googleAnalytics = ""
+googleAnalytics = "G-CRMT97QGNY"
 hasCJKLanguage = true
 summaryLength = 160
 [markup.goldmark.renderer]
