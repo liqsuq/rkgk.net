@@ -32,7 +32,7 @@ $ xsel --clipboard --output > $1
 
 dfコマンド打っても最近のUbuntuだとSnapの関係で/dev/loop\*とかがたくさんあって分かりづらいので仮想ファイルシステムを除外してついでに見やすく。
 
-```
+``` bash
 $ df -hT -x squashfs -x tmpfs -x devtmpfs
 ```
 
