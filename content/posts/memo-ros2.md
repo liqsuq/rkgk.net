@@ -2,12 +2,12 @@
 title: "ROS2メモ"
 date: 2022-03-28T15:45:15+09:00
 categories:
-  - "メモ"
+  - "Memo"
 tags:
   - "Linux"
   - "Ubuntu"
   - "ROS2"
-draft: true
+draft: false
 ---
 
 ROS2に関する作業中のあれこれをメモしておく。
@@ -15,20 +15,14 @@ ROS2に関する作業中のあれこれをメモしておく。
 <!--more-->
 
 # 追加のパッケージのインストール
-ROS2 Galacticのインストールにおいて、2022/03/08確認時点ではパッケージが足りずドキュメント通りにやってもチュートリアルが実行できない。
+ROS2 Galacticのインストールにcolconとrosdepが言及されていないので自分のソースのビルドとかが出来ない。以前のドキュメントには書かれていたはずだけど…
 
-まずは以前のドキュメントには書かれていたはずのcolconとrosdepのインストール手順。
+colconとrosdepのインストール/セットアップ手順。
 
 ```
 $ sudo apt install python3-rosdep python3-colcon-common-extensions
 $ sudo rosdep init
 $ rosdep update
-```
-
-更にシミュレータ周りで追加のパッケージが必要になるが、これはROS2のバージョン依存。
-
-```
-$ sudo apt install ros-galactic-ros-ign-bridge ros-galactic-webots-ros2-driver
 ```
 
 # rosdepが失敗する
@@ -39,4 +33,4 @@ rospkg.os_detect.OSNotDetected: Could not detect OS, tried ['zorin', ...]
 ```
 
 /etc/os-releaseを元のリリースに戻すことで解決する。
-さもなければ自前のカスタムOSをサポート済みOSにしてもらえる様にコミュニティ活動すること。
+もしくは自前のカスタムOSをサポート済みOSにしてもらえる様にコミュニティ活動する。
