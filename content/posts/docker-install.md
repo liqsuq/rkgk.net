@@ -2,7 +2,7 @@
 title: "Dockerインストール(Ubuntu)"
 date: 2022-03-29T15:28:24+09:00
 categories:
-  - "メモ"
+  - "Memo"
 tags:
   - "Linux"
   - "Ubuntu"

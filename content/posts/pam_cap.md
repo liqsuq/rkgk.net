@@ -2,7 +2,7 @@
 title: "pam_capで設定した内容がgnome-terminalに反映されない"
 date: 2022-03-31T14:07:23+09:00
 categories:
-  - "メモ"
+  - "Memo"
 tags:
   - "Linux"
   - "Ubuntu"

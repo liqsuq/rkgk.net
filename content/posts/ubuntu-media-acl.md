@@ -2,7 +2,7 @@
 title: "Ubuntuの/media/以下のACLがたまにバグる"
 date: 2022-03-29T14:55:11+09:00
 categories:
-  - "メモ"
+  - "Memo"
 tags:
   - "Linux"
   - "Ubuntu"

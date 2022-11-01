@@ -2,7 +2,7 @@
 title: "Hugoで使えるマークダウン記法の確認"
 date: 2020-01-01T10:01:49+09:00
 categories:
-  - "メモ"
+  - "Memo"
 tags:
   - "Hugo"
   - "Markdown"
